@@ -40,7 +40,7 @@ const Dashboard = ({ onLogout }) => {
         `"${tx.description.replace(/"/g, '""')}",${tx.amount},"${tx.type}","${tx.category}","${tx.date}"`
     );
 
-    n
+    
     const csvContent = headers.concat(rows.join("\n")).join("");
 
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
