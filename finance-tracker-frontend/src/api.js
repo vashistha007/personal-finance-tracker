@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'https://personal-finance-tracker-wi3r.onrender.com' });
+const API = axios.create({ baseURL: 'http://localhost:8080/api' });
 
 // Injects the security token automatically into headers for backend verification
 API.interceptors.request.use((config) => {
