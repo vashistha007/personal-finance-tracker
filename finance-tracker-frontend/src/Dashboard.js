@@ -282,10 +282,10 @@ const Dashboard = ({ onLogout }) => {
                 .btn-table-del:hover { background-color: #fef2f2; color: #dc2626; border-color: #fecaca; }
 
             `}</style>
-            {/* --- CSS STYLES END --- */}
+        
 
             <div className="dashboard-container">
-                {/* Header Section */}
+             
                 <div className="header-panel">
                     <h2 className="main-title">
                         <span>📊</span> Financial Ledger
@@ -319,7 +319,7 @@ const Dashboard = ({ onLogout }) => {
                     </div>
                 </div>
 
-                {/* Form Section */}
+                
                 <div className="card">
                     <h3 className="card-title">{editingId ? "Edit Transaction" : "Add New Transaction"}</h3>
                     <form onSubmit={handleSubmit} className="transaction-form">
@@ -368,8 +368,8 @@ const Dashboard = ({ onLogout }) => {
                         <tbody>
                             {transactions.length === 0 ? (
                                 <tr>
-                                    <td colSpan="6" style={{textAlign: 'center', color: '#9ca3af', padding: '40px'}}>Koi data nahi hai bhai, kuch add karo!</td>
-                                </tr>
+                                    <td colSpan="6" style={{textAlign: 'center', color: '#9ca3af', padding: '40px'}}>No data found, Add Something</td>
+                                </tr>dd karo!
                             ) : (
                                 transactions.map(tx => (
                                     <tr key={tx.id}>
