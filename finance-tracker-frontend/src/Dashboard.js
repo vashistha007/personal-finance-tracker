@@ -57,7 +57,7 @@ const Dashboard = ({ onLogout }) => {
     };
 
     const handleDelete = async (id) => {
-        if (window.confirm("Bhai, pakka delete karna hai?")) {
+        if (window.confirm("confirm to delete")) {
             await API.delete(`/transactions/${id}`);
             fetchTransactions();
         }
