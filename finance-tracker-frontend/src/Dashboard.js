@@ -14,7 +14,7 @@ const Dashboard = ({ onLogout }) => {
             const res = await API.get('/transactions');
             setTransactions(res.data);
         } catch (error) {
-            console.error("Data fetch karne mein dikkat hui:", error);
+            console.error("Problem facing  to fetch data:", error);
         }
     };
 
@@ -30,13 +30,13 @@ const Dashboard = ({ onLogout }) => {
             setForm({ description: '', amount: '', type: 'EXPENSE', category: '', date: '' });
             fetchTransactions();
         } catch (error) {
-            console.error("Form submit karne mein dikkat hui:", error);
+            console.error("Problem faced while submtting the Form :", error);
         }
     };
 
     const exportToCSV = () => {
         if (transactions.length === 0) {
-            alert("Export karne ke liye koi data nahi hai!");
+            alert("No data found to export!");
             return;
         }
 
@@ -328,7 +328,7 @@ const Dashboard = ({ onLogout }) => {
                             <input type="text" placeholder="E.g., Groceries" value={form.description} className="form-input" onChange={e => setForm({...form, description: e.target.value})} required />
                         </div>
                         <div className="form-group">
-                            <label>Value ($)</label>
+                            <label>Value (₹)</label>
                             <input type="number" placeholder="0.00" value={form.amount} className="form-input" onChange={e => setForm({...form, amount: e.target.value})} required />
                         </div>
                         <div className="form-group">
@@ -375,7 +375,7 @@ const Dashboard = ({ onLogout }) => {
                                     <tr key={tx.id}>
                                         <td style={{fontWeight: '500'}}>{tx.description}</td>
                                         <td className={tx.type === 'EXPENSE' ? 'amt-expense' : 'amt-income'}>
-                                            {tx.type === 'EXPENSE' ? '-' : '+'}${parseFloat(tx.amount).toFixed(2)}
+                                            {tx.type === 'EXPENSE' ? '-' : '+'}₹{parseFloat(tx.amount).toFixed(2)}
                                         </td>
                                         <td>
                                             <span className={`badge-type ${tx.type === 'EXPENSE' ? 'badge-expense' : 'badge-income'}`}>
